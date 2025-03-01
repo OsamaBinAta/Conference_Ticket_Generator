@@ -1,0 +1,199 @@
+*{
+  box-sizing: border-box;
+  color: white;
+  font-family: Inconsolata;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  /* ^\s*\n */
+  background:
+  url('pattern-squiggly-line-top.svg') 100% 3.5% / clamp(7rem,30vw,25rem) no-repeat, /* 7rem*/
+  url('pattern-squiggly-line-bottom-mobile-tablet.svg') 0% 100% / clamp(20rem,50vw,40rem) no-repeat,
+  url('pattern-circle.svg') 115% 80% / 6.5rem auto  no-repeat,
+  url('pattern-circle.svg') -5% -3% / 6.5rem   no-repeat , 
+  url('pattern-lines.svg') 0% 1%/ 60rem no-repeat, 
+  url('background-mobile.png')no-repeat top right/cover ;
+  background-attachment: scroll,scroll,scroll,scroll,scroll,scroll;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  margin: 2vh 5vw;
+}
+.top{
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+} 
+.top img{
+  width: clamp(1.4rem,2vw,2.1rem);
+}
+.top p{
+  font-size: clamp(1.3rem,2vw,2rem);
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+.heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 1rem;
+  max-width: 45rem;
+}
+.heading p{
+  color:rgb(255, 255, 255);
+  font-size: clamp(1.7rem, 4.4vw, 3.3rem);
+  font-weight: 700;
+  margin: 18px 0;
+}
+.passage{
+  display: flex;
+  justify-content: center;
+  margin: 0 1rem;
+} 
+.passage p{
+  color:hsl(252, 6%, 83%);
+  font-size: clamp(1.2rem, 5vw, 1.3rem);
+  text-align: center;
+  margin:20px 0;
+}
+.avatar_head{
+  font-size: 1.2rem;
+}
+.avatar_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 10rem; 
+  border: .15rem dashed white;
+  border-radius: .6rem;
+  background-color: hsla(245, 19%, 35%, 0.4) ;
+}
+.avatar_img{
+  width: 4rem ;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  border: .15rem solid hsl(252, 6%, 83%);
+}
+.avatar_ins p{
+  margin-inline:clamp(2.6rem, 8vw, 5rem);
+  margin-bottom:0;
+}
+.avatar_btn{
+  display: none;
+  gap:1rem;
+  margin-top:1rem;
+}
+.avatar_btn button{
+  padding:.4rem .5rem;
+  color: hsl(252, 6%, 83%);
+  background-color:hsl(245, 19%, 35%) ;
+  border:none;
+  border-radius:.3rem;
+  cursor: pointer;
+}
+.edit2 p{
+  font-size:.75rem;
+}
+.avatar_end2{
+  display: none;
+}
+.avatar_end2 p{
+  font-weight: 800;
+  color:hsl(7, 88%, 67%);
+}
+.avatar_end3{
+  display: none;
+}
+.avatar_end3 p{
+  font-weight: 800;
+  color:hsl(7, 88%, 67%);
+}
+.edit p{
+  font-size: 1.2rem;
+}
+.edit input{
+  width:clamp(21.5rem, 90vw, 26.6rem);
+  height: 3.5rem;
+  background-color: hsla(245, 19%, 35%, 0.4) ;
+  border: .15rem solid hsl(252, 6%, 83%);
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  padding:1rem 1rem;
+}
+.name_error{
+  display:none;
+  font-size:.75rem !important;
+  font-weight: 800;
+  color:hsl(7, 88%, 67%); 
+}
+.git_error{
+  display:none;
+  font-size:.75rem !important;
+  font-weight: 800;
+  color:hsl(7, 88%, 67%); 
+}
+.email_error {
+  display:none;
+  font-size:.75rem !important;
+  font-weight: 800;
+  color:hsl(7, 88%, 67%);
+}
+.generate{
+  margin-top:4vh;
+  padding-bottom: 11vh;
+}
+.generate button{
+  width:clamp(21.5rem, 90vw, 26.6rem);
+  height: 3.5rem;
+  background-color: hsl(7, 88%, 67%) ;
+  border: .15rem solid hsl(7, 88%, 67%) ;;
+  color:hsl(248, 70%, 10%);
+  font-weight: 900;
+  cursor: pointer;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  padding:1rem 1rem;
+}
+.credits p{
+  justify-self: center;
+  text-align: center;
+}
+@media (min-width:1024px){
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background:
+    url('pattern-squiggly-line-top.svg') 100% 3.5% / clamp(7rem,30vw,25rem) no-repeat, 
+    url('pattern-squiggly-line-bottom-desktop.svg') 0% 100% / clamp(50rem,87vw,60rem) no-repeat,
+    url('pattern-circle.svg') 5% -10% / 13rem auto  no-repeat,
+    url('pattern-circle.svg') 80% 60% / 13rem   no-repeat , 
+    url('pattern-lines.svg') 50% 1%/ 60rem no-repeat, 
+    url('background-desktop.png')no-repeat top right/cover ;
+    background-attachment: scroll,scroll,scroll,scroll,scroll,scroll;
+  }
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+.shake{
+   animation: shake 0.4s ease-in-out;
+}

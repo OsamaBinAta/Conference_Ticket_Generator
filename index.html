@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylemobile1.css">
+  <title>Conference Ticket Generator</title>
+</head>
+<body>
+  <div class="top">
+    <img src="logo-mark.svg" alt="">
+    <p>Coding Conf</p>
+  </div>
+  <div class="heading">
+    <p>Your Journey to Coding Conf 2025 Starts Here!</p>
+  </div>
+  <div class="passage">
+    <p>Secure your spot at next year's biggest coding conference.</p>
+  </div>
+  <div class="container">
+    <div class="avatar_head">
+      <p>Upload Avatar</p>
+    </div>
+    <div class="avatar_container">
+      <div class="avatar"><img class="avatar_img" src="icon-upload.svg" alt=""></div>
+      <input class="img_input" type="file" style="display:none;">
+      <div class="avatar_ins"><p>Drag and drop or click to upload</p></div>
+      <div class="avatar_btn"><button class="remove">Remove image</button><button class="change">Change image</button></div>
+    </div>
+    <div class="avatar_end1 edit2"><p>ⓘ Upload your photo (JPG or PNG, max size: 500KB).</p></div>
+    <div class="avatar_end2 edit2"><p>ⓘ File too large. Please upload a file under 500KB.</p></div>
+    <div class="avatar_end3 edit2"><p>ⓘ Required: Upload your photo (JPG or PNG, max size: 500KB)</p>
+    </div>
+    <div class="name edit">
+      <p>Full Name</p>
+      <input class="name_in" type="text">
+      <p class="name_error">ⓘ Please enter your full name.</p>
+    </div>
+    <div class="email edit">
+      <p>Email Address</p>
+      <input class="email_in" type="email">
+      <p class="email_error">ⓘ Please enter a valid email address.</p>
+    </div>
+    <div class="git edit">
+      <p>GitHub Username</p>
+      <input class="git_in" type="text" placeholder="@">
+      <p class="git_error">ⓘ GitHub Account ID is required.</p>
+    </div>
+    <div class="generate">
+      <button> Generate My Ticket</button>
+    </div>
+    <div class="credits">
+      <p>Challenge by <a href="https://www.frontendmentor.io/">Frontend Mentor</a>. Coded by <a
+        href="https://github.com/OsamaBinAta">Osama Bin Ata</a>.</p>
+    </div>
+  </div>
+  <script>
+     window.onload = function () {
+      window.scrollTo(0, 0);
+     }
+      const av_img=document.querySelector('.avatar_img');
+      const input=document.querySelector('.img_input')
+      const end1= document.querySelector('.avatar_end1');
+      const end2= document.querySelector('.avatar_end2');
+      const end3= document.querySelector('.avatar_end3');
+      const ins=document.querySelector('.avatar_ins');
+      const btn=document.querySelector('.avatar_btn')
+      const remove=document.querySelector('.remove');
+      const change=document.querySelector('.change');
+      const container=document.querySelector('.avatar_container');
+      const generate=document.querySelector('.generate');
+      const email=document.querySelector('.email_in');
+      const error=document.querySelector('.email_error');
+      const name_in=document.querySelector('.name_in');
+      const git_in=document.querySelector('.git_in');
+      const name_err=document.querySelector('.name_error');
+      const git_err=document.querySelector('.git_error');
+      let image=false;
+      let emaily=false;
+      email.addEventListener('blur',function (){
+        let input=email.value;
+        let regex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!regex.test(input)|| !input) {
+        error.style.display='block';
+        error.classList.add("shake");
+          setTimeout(() =>
+          error.classList.remove("shake"),400);
+        emaily=true;
+       }
+        else {
+        error.style.display='none';
+        emaily=false;
+      }
+      })
+      name_in.addEventListener('blur',function (){
+        if(!name_in.value)
+         { name_err.style.display='block';
+          name_err.classList.add("shake");
+          setTimeout(() =>
+          name_err.classList.remove("shake"),400);}
+        else
+        name_err.style.display='none';
+      })
+      git_in.addEventListener('blur',function (){
+        if(!git_in.value)
+          {git_err.style.display='block';
+          git_err.classList.add("shake");
+          setTimeout(() =>
+          git_err.classList.remove("shake"),400);}
+        else
+        git_err.style.display='none';
+      })
+      generate.addEventListener('click',function (){
+        if(!input.value){
+          end3.style.display='block';
+          end3.classList.add("shake");
+          setTimeout(() =>
+          end3.classList.remove("shake"),400);
+          end1.style.display='none';}
+          else{
+          end1.style.display='none';
+          end3.style.display='none';}
+        if(!email.value)
+          {error.style.display='block';
+          error.classList.add("shake");
+          setTimeout(() =>
+          error.classList.remove("shake"),400);}
+        else
+        error.style.display='none';
+        if(!name_in.value)
+          {name_err.style.display='block';
+          name_err.classList.add("shake");
+          setTimeout(() =>
+          name_err.classList.remove("shake"),400);}
+        else
+        name_err.style.display='none';
+        if(!git_in.value)
+          {git_err.style.display='block';
+          git_err.classList.add("shake");
+          setTimeout(() =>
+          git_err.classList.remove("shake"),400);}
+        else
+        git_err.style.display='none';
+      if(input.value && email.value && name_in.value && git_in.value){
+          window.location.href = "index2.html?name=" + encodeURIComponent(name_in.value)+"&email=" + encodeURIComponent(email.value) +"&git=" + encodeURIComponent(git_in.value);}
+      });
+      function triggerFileInput(){
+        input.click();
+      }
+      container.addEventListener('click',triggerFileInput);
+      input.addEventListener('change',handleFileChange);
+      function handleFileChange(event){
+        const file=event.target.files[0];
+        if(file.size > 500 * 1024){
+          end1.style.display='none';
+          end2.style.display='block';
+          end3.style.display='none';
+          end2.classList.add("shake");
+          setTimeout(() =>
+          end2.classList.remove("shake"),400);
+          event.target.value='';
+          image=false;
+          return;
+        }
+        if(file){
+          const reader=new FileReader();
+          reader.onload= function(e){
+            av_img.src=e.target.result;
+            localStorage.setItem('Image',e.target.result);
+            image=true;
+            end1.style.display='none';
+            end2.style.display='none';
+            end3.style.display='none';
+            ins.style.display='none';
+            btn.style.display='flex';
+            container.removeEventListener('click', triggerFileInput);
+            container.style.pointerEvents='none';
+            remove.style.pointerEvents='auto';
+            change.style.pointerEvents='auto';
+            container.style.cursor='none';
+          };
+          reader.readAsDataURL(file); }}
+          remove.addEventListener('click',function (){
+            container.style.pointerEvents='';
+            container.style.cursor='pointer';
+            input.value='';
+            av_img.src='icon-upload.svg';
+            end1.style.display='block';
+            ins.style.display='block';
+            btn.style.display='none';
+            setTimeout( function(){
+              container.addEventListener('click',triggerFileInput);
+            },50);
+          });
+          change.addEventListener('click',triggerFileInput);
+  </script>
+</body>
+</html>

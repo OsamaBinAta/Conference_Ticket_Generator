@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylemobile2.css">
+  <title>Conference Ticket Generator</title>
+</head>
+<body>
+  <div class="container">
+    <div class="top">
+      <img src="logo-mark.svg" alt="">
+      <p>Coding Conf</p>
+    </div>
+    <div class="heading">
+      <p>Congrats, <span class="_name"></span>! Your ticket is ready.</p>
+    </div>
+    <div class="passage">
+      <p>We've emailed your ticket to <span class="_email"></span> and will send updates in the run up to the event.</p>
+    </div>
+    <div class="card_container">
+      <div class="card_container1">
+      <div class="first_line">
+        <img src="logo-full.svg" alt="">
+        <p>Jan 31, 2025 / Austin, TX</p>
+      </div>
+      <div class="second_line">
+        <img class="avatar" src="" alt="">
+        <div class="bio">
+          <p class="_name2"></p>
+          <div class="bio_2">
+            <img src="icon-github.svg" alt="">
+            <p class="git"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gen_id">
+      <p>#01609</p>
+    </div>
+  </div>
+  </div>
+  <div class="credits">
+    <p>Challenge by <a href="https://www.frontendmentor.io/">Frontend Mentor</a>. Coded by <a
+      href="https://github.com/OsamaBinAta">Osama Bin Ata</a>.</p>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const _name = params.get("name");
+    const _email = params.get("email");
+    const _git = params.get("git");
+    const git=decodeURIComponent(_git);
+    const _image = localStorage.getItem('Image');
+    document.querySelector('._name').innerHTML =(decodeURIComponent(_name).trim());
+    document.querySelector('._email').innerHTML = (decodeURIComponent(_email).trim());
+    document.querySelector('._name2').innerHTML = (decodeURIComponent(_name).trim());
+    document.querySelector('.avatar').src = _image;
+    if(git.includes('@'))
+    document.querySelector('.git').innerHTML = git;
+    else 
+    document.querySelector('.git').innerHTML ='@'+git;
+  </script>
+</body>
+</html>

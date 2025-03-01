@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+  color: white;
+  font-family: Inconsolata;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background:
+    url('pattern-squiggly-line-top.svg') 100% 3.5% / 7rem no-repeat,
+    url('pattern-squiggly-line-bottom-mobile-tablet.svg') 1% 100% / 20rem no-repeat,
+    url('pattern-circle.svg') 115% 80% / 6.5rem auto no-repeat,
+    url('pattern-circle.svg') -5% -3% / 6.5rem no-repeat,
+    url('pattern-lines.svg') 0% 1%/ 60rem no-repeat,
+    url('background-desktop.png') 68% / auto no-repeat;
+  background-attachment: fixed, fixed, fixed, fixed, fixed, fixed;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  margin: 2.5vh auto;
+}
+
+.top {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.top img {
+  width: clamp(1.4rem, 2vw, 2.1rem);
+}
+
+.top p {
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  ;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+
+.heading span {
+  font-size: clamp(1.9rem, 5vw, 4.6rem);
+  font-weight: 800;
+  background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  max-width: 56rem;
+  margin: 0 1rem;
+}
+
+.heading p {
+  color: white;
+  font-size: clamp(1.9rem, 5vw, 4.5rem);
+  font-weight: 600;
+  margin: 30px 0;
+}
+
+.passage span {
+  color: hsl(7, 88%, 67%);
+  font-weight: 800;
+  font-size: clamp(1.2rem, 5vw, 1.6rem);
+}
+
+.passage {
+  display: flex;
+  justify-content: center;
+  margin: 0 1rem;
+  max-width: 38rem;
+}
+
+.passage p {
+  color: hsl(252, 6%, 83%);
+  font-size: clamp(1.2rem, 5vw, 1.6rem);
+  margin: 20px 0;
+  text-align: center;
+}
+
+.card_container {
+  display: flex;
+  width: clamp(336px, 45vw, 40rem);
+  height: clamp(20vh, 22vw, 19rem);
+  background:
+    url('pattern-ticket.svg') top left/cover no-repeat;
+  border-radius: .3rem;
+  margin-top: clamp(3rem, 7vw, 6rem);
+  justify-content: space-around;
+  gap: clamp(2rem, 11vw, 9rem);
+}
+
+.card_container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.gen_id {
+  display: flex;
+  align-items: center;
+}
+
+.gen_id p {
+  writing-mode: vertical-lr;
+  color: hsl(245, 15%, 58%);
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.first_line img {
+  width: clamp(209px, 25vw, 22rem);
+}
+
+.first_line p {
+  margin: 0;
+  margin-left: clamp(3rem, 5vw, 4.5rem);
+  font-size: clamp(14px, 2vw, 1.4rem);
+  color: hsl(252, 6%, 83%);
+}
+
+.avatar {
+  height: clamp(3rem, 7vw, 6rem);
+  object-fit: cover;
+  border-radius: clamp(.5rem, 2vw, 1.2rem);
+}
+
+.second_line p {
+  margin: 0;
+  color: hsl(252, 6%, 83%);
+}
+
+.second_line {
+  display: flex;
+  gap: .8rem;
+}
+
+.bio_2 {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .3rem;
+}
+
+._name2 {
+  font-size: clamp(1.3rem, 3vw, 2.3rem);
+  font-weight: 500;
+}
+
+.git {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.credits {
+  display: flex;
+  align-items: flex-end;
+  height: 25vh;
+  text-align: center;
+}
+
+@media (min-width:1024px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background:
+      url('pattern-squiggly-line-top.svg') 100% 3.5% / clamp(7rem, 30vw, 25rem) no-repeat,
+      url('pattern-squiggly-line-bottom-desktop.svg') 0% 100% / clamp(50rem, 87vw, 60rem) no-repeat,
+      url('pattern-circle.svg') 5% -10% / 13rem auto no-repeat,
+      url('pattern-circle.svg') 80% 60% / 13rem no-repeat,
+      url('pattern-lines.svg') 50% 1%/ 60rem no-repeat,
+      url('background-desktop.png')no-repeat top right/cover;
+    background-attachment: scroll, scroll, scroll, scroll, scroll, scroll;
+  }
+}
